@@ -33,8 +33,23 @@
               "zone.js/testing"
             ]
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/drag-drop-sort-dialog/**/*.ts",
+              "projects/drag-drop-sort-dialog/**/*.html"
+            ],
+            "eslintConfig": "projects/drag-drop-sort-dialog/eslint.config.js"
+          }
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   }
 }

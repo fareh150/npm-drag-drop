@@ -10,7 +10,8 @@
     "drag-drop-sort-dialog:build": "ng build drag-drop-sort-dialog",
     "drag-drop-sort-dialog:lint": "ng lint drag-drop-sort-dialog",
     "drag-drop-sort-dialog:test": "ng test drag-drop-sort-dialog --no-watch --no-progress --browsers=ChromeHeadless",
-    "drag-drop-sort-dialog:publish": "npm run drag-drop-sort-dialog:lint && npm run drag-drop-sort-dialog:test && npm run drag-drop-sort-dialog:build && npm publish dist/drag-drop-sort-dialog"
+    "drag-drop-sort-dialog:publish": "npm run drag-drop-sort-dialog:lint && npm run drag-drop-sort-dialog:test && npm run drag-drop-sort-dialog:build && npm publish dist/drag-drop-sort-dialog",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +33,8 @@
     "@angular/cli": "^19.0.1",
     "@angular/compiler-cli": "^19.0.0",
     "@types/jasmine": "~5.1.0",
+    "angular-eslint": "19.0.2",
+    "eslint": "^9.16.0",
     "jasmine-core": "~5.4.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -39,6 +42,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^19.1.0",
-    "typescript": "~5.6.2"
+    "typescript": "~5.6.2",
+    "typescript-eslint": "8.18.0"
   }
 }
