@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "drag-drop-sort-dialog:build": "ng build drag-drop-sort-dialog",
+    "drag-drop-sort-dialog:lint": "ng lint drag-drop-sort-dialog",
+    "drag-drop-sort-dialog:test": "ng test drag-drop-sort-dialog --no-watch --no-progress --browsers=ChromeHeadless",
+    "drag-drop-sort-dialog:publish": "npm run drag-drop-sort-dialog:lint && npm run drag-drop-sort-dialog:test && npm run drag-drop-sort-dialog:build && npm publish dist/drag-drop-sort-dialog"
   },
   "private": true,
   "dependencies": {
