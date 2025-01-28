@@ -45,6 +45,105 @@
           }
         }
       }
+    },
+    "drag-drop-sort-dialog-testbed-app": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/drag-drop-sort-dialog-testbed-app",
+      "sourceRoot": "projects/drag-drop-sort-dialog-testbed-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/drag-drop-sort-dialog-testbed-app",
+            "index": "projects/drag-drop-sort-dialog-testbed-app/src/index.html",
+            "browser": "projects/drag-drop-sort-dialog-testbed-app/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/drag-drop-sort-dialog-testbed-app/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/drag-drop-sort-dialog-testbed-app/public"
+              }
+            ],
+            "styles": [
+              "projects/drag-drop-sort-dialog-testbed-app/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "drag-drop-sort-dialog-testbed-app:build:production"
+            },
+            "development": {
+              "buildTarget": "drag-drop-sort-dialog-testbed-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/drag-drop-sort-dialog-testbed-app/tsconfig.spec.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/drag-drop-sort-dialog-testbed-app/public"
+              }
+            ],
+            "styles": [
+              "projects/drag-drop-sort-dialog-testbed-app/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/drag-drop-sort-dialog-testbed-app/**/*.ts",
+              "projects/drag-drop-sort-dialog-testbed-app/**/*.html"
+            ],
+            "eslintConfig": "projects/drag-drop-sort-dialog-testbed-app/eslint.config.js"
+          }
+        }
+      }
     }
   },
   "cli": {
