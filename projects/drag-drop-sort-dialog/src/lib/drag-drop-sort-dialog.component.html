@@ -1,0 +1,34 @@
+<button
+    mat-icon-button
+    class="absolute right-1 top-1"
+    (click)="closeSortDialog()"
+    >
+    <mat-icon svgIcon="mat_solid:close"></mat-icon>
+</button>
+<div class="flex max-h-[90vh] gap-4 p-6 justify-center items-center">
+    <div class="max-h-full w-3/4 overflow-auto">
+        <div
+            cdkDropList
+            [cdkDropListData]="sortableData()"
+            (cdkDropListDropped)="drop($event)"
+        >
+            @for (data of sortableData(); track data[displayKey()])
+            {
+            <div
+                cdkDrag
+                class="bg-gray-100 p-2 mb-2 rounded-lg cursor-move text-center"
+            >
+                {{ data[orderKey()] }}.   {{ data[displayKey()] }}
+            </div>
+            }
+        </div>
+        <button
+            (click)="saveData()"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+            Guardar
+          </button>
+        </div>
+      </div>
+
+      <!-- componentizar el guardar  -->
