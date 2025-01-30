@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+
+import { DragDropSortDialogComponent } from 'drag-drop-sort-dialog';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [
+    DragDropSortDialogComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
